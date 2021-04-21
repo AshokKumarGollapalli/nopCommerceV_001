@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"11.0.10+8-LTS-162"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1619013155","nanos":531063600}}},{"source":{"uri":"file:///C:/Users/ashok%20gollapalli/eclipse-workspace/nopCommerceV_001/./Features/Customers.feature","data":"Feature: Customers\r\n\r\n Background: comon steps for following scenarios\r\nGiven open chrome Browser\r\nWhen navigate to URL \"https://admin-demo.nopcommerce.com/login\"\r\nAnd enter username \"admin@yourstore.com\" and password \"admin\"\r\nAnd Click on Login button\r\nThen user can view Dashbord\r\n\r\n@sanity \r\nScenario: Login with valid credentials\r\nAnd click on custemers menu\r\nAnd click on customer menu item\r\nAnd click on ADDnew cutomerpage\r\nThen user can view Add New customer page\r\nWhen user can Enter customer info\r\nAnd click on save button\r\nThen user can view confirmation message \"The new customer has been added successfully\"\r\nAnd close browser\r\n\r\n@regression\r\nScenario: Search customer by EmailID\r\nAnd click on custemers menu\r\nAnd click on customer menu item\r\nAnd Enter customer Email\r\nWhen click on search button \r\nThen user should found Email in the Search table\r\nAnd close browser\r\n\r\n@regression\r\nScenario: Search customer by FileName\r\nAnd click on custemers menu\r\nAnd click on customer menu item\r\nThen Enter customer FirstName\r\nThen Enter customer LastName\r\nWhen click on search button\r\nThen user found Name in the Search table\r\nAnd close browser\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/ashok%20gollapalli/eclipse-workspace/nopCommerceV_001/./Features/Customers.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Customers","children":[{"background":{"location":{"line":3,"column":2},"keyword":"Background","name":"comon steps for following scenarios","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"open chrome Browser","id":"fbef919c-89d7-40cb-aea9-2de4b3757b31"},{"location":{"line":5,"column":1},"keyword":"When ","text":"navigate to URL \"https://admin-demo.nopcommerce.com/login\"","id":"d25f8fb9-41ce-4f78-9477-4efa3956a59b"},{"location":{"line":6,"column":1},"keyword":"And ","text":"enter username \"admin@yourstore.com\" and password \"admin\"","id":"0ed64499-8f12-4426-acb8-20a95c650ace"},{"location":{"line":7,"column":1},"keyword":"And ","text":"Click on Login button","id":"b6e44911-c6e4-472c-8f34-b07a33fbcc06"},{"location":{"line":8,"column":1},"keyword":"Then ","text":"user can view Dashbord","id":"68fe0e8c-5c7e-4956-ae5d-c2bb98f43b75"}],"id":"70b3b16e-deea-42ea-972d-b6a23cd36120"}},{"scenario":{"location":{"line":11,"column":1},"tags":[{"location":{"line":10,"column":1},"name":"@sanity","id":"d577ba5c-5076-4416-acf8-0d46cd9e38cc"}],"keyword":"Scenario","name":"Login with valid credentials","steps":[{"location":{"line":12,"column":1},"keyword":"And ","text":"click on custemers menu","id":"3ebe81be-f05e-4461-b507-ca38d608fc9d"},{"location":{"line":13,"column":1},"keyword":"And ","text":"click on customer menu item","id":"6414e1f5-e4c2-490e-81da-3bcc56459bbe"},{"location":{"line":14,"column":1},"keyword":"And ","text":"click on ADDnew cutomerpage","id":"d9c34d19-fe88-405e-b32b-5ce8097a7f97"},{"location":{"line":15,"column":1},"keyword":"Then ","text":"user can view Add New customer page","id":"a6685f98-5358-4e68-9792-641fed42ce0a"},{"location":{"line":16,"column":1},"keyword":"When ","text":"user can Enter customer info","id":"38fdd0b1-24b1-41b7-b85f-203214244628"},{"location":{"line":17,"column":1},"keyword":"And ","text":"click on save button","id":"38f791bb-f9fc-4f97-9619-caec25df305f"},{"location":{"line":18,"column":1},"keyword":"Then ","text":"user can view confirmation message \"The new customer has been added successfully\"","id":"7bb2db20-64b0-46a0-8a2e-c5f75e77b36c"},{"location":{"line":19,"column":1},"keyword":"And ","text":"close browser","id":"918f9fa3-7ecf-4321-81f3-248f83dace8b"}],"id":"8b9ee85a-e645-4c74-a9b3-f4fafcb7e543"}},{"scenario":{"location":{"line":22,"column":1},"tags":[{"location":{"line":21,"column":1},"name":"@regression","id":"173aa3ce-97cd-4175-aae7-9ee05cc4deec"}],"keyword":"Scenario","name":"Search customer by EmailID","steps":[{"location":{"line":23,"column":1},"keyword":"And ","text":"click on custemers menu","id":"1c207052-4400-4f5f-a14e-467215e349ac"},{"location":{"line":24,"column":1},"keyword":"And ","text":"click on customer menu item","id":"3337d6a0-e30d-41cb-bf36-d1bc647c489d"},{"location":{"line":25,"column":1},"keyword":"And ","text":"Enter customer Email","id":"75aa9cd9-4cdb-4528-97c5-750813f3491c"},{"location":{"line":26,"column":1},"keyword":"When ","text":"click on search button","id":"bc63a85c-9eac-4c1a-a5af-ab2508ea6d8b"},{"location":{"line":27,"column":1},"keyword":"Then ","text":"user should found Email in the Search table","id":"6a01a4bd-5ff1-4994-ad63-55a771f78fc5"},{"location":{"line":28,"column":1},"keyword":"And ","text":"close browser","id":"364a1133-cba8-4216-826e-e57b63163fe0"}],"id":"ec824a20-220e-4ef3-9d76-527987392fd5"}},{"scenario":{"location":{"line":31,"column":1},"tags":[{"location":{"line":30,"column":1},"name":"@regression","id":"843e1bcb-5bd6-4aec-b50b-341ed9ae28d0"}],"keyword":"Scenario","name":"Search customer by FileName","steps":[{"location":{"line":32,"column":1},"keyword":"And ","text":"click on custemers menu","id":"d075eb5d-0143-4ed4-a14a-4e275b63ba6d"},{"location":{"line":33,"column":1},"keyword":"And ","text":"click on customer menu item","id":"1df452d3-9249-4040-87cd-564cb4c5d76f"},{"location":{"line":34,"column":1},"keyword":"Then ","text":"Enter customer FirstName","id":"02d8e369-46aa-4af7-9600-82bf14ffac43"},{"location":{"line":35,"column":1},"keyword":"Then ","text":"Enter customer LastName","id":"e7017a98-3b33-487f-bed1-7ceb9cf27ce4"},{"location":{"line":36,"column":1},"keyword":"When ","text":"click on search button","id":"fcb236a0-baf0-48ec-bc84-bcd058d788af"},{"location":{"line":37,"column":1},"keyword":"Then ","text":"user found Name in the Search table","id":"5eb2e14d-5de6-45a1-bb49-b1b94ed4d391"},{"location":{"line":38,"column":1},"keyword":"And ","text":"close browser","id":"6452405e-8171-41a8-9437-824c68c01438"}],"id":"5805d1b8-ff9b-4a55-8f41-6f012d23c553"}}]}}},{"pickle":{"id":"10a8a0c0-09a9-4456-a4c2-8eb763bc5729","uri":"file:///C:/Users/ashok%20gollapalli/eclipse-workspace/nopCommerceV_001/./Features/Customers.feature","name":"Login with valid credentials","language":"en","steps":[{"text":"open chrome Browser","id":"d3d730e7-5030-493c-8097-bf943afd7da2","astNodeIds":["fbef919c-89d7-40cb-aea9-2de4b3757b31"]},{"text":"navigate to URL \"https://admin-demo.nopcommerce.com/login\"","id":"3291f07d-ffc2-48b0-bed2-586d896c2b2d","astNodeIds":["d25f8fb9-41ce-4f78-9477-4efa3956a59b"]},{"text":"enter username \"admin@yourstore.com\" and password \"admin\"","id":"28724a60-084f-4d98-8e84-8ce31b020b38","astNodeIds":["0ed64499-8f12-4426-acb8-20a95c650ace"]},{"text":"Click on Login button","id":"84e80403-a14f-4723-8345-ff07d7a234f4","astNodeIds":["b6e44911-c6e4-472c-8f34-b07a33fbcc06"]},{"text":"user can view Dashbord","id":"f89aa17a-d4e4-43c9-aceb-bc787e4b7c44","astNodeIds":["68fe0e8c-5c7e-4956-ae5d-c2bb98f43b75"]},{"text":"click on custemers menu","id":"6c3a0a1e-ed64-4f25-9e0e-bbe6a75f7b39","astNodeIds":["3ebe81be-f05e-4461-b507-ca38d608fc9d"]},{"text":"click on customer menu item","id":"2af3c8e7-428b-48df-92ce-21e835186d39","astNodeIds":["6414e1f5-e4c2-490e-81da-3bcc56459bbe"]},{"text":"click on ADDnew cutomerpage","id":"43e49878-dfc9-4faa-9a73-60dc7c579d24","astNodeIds":["d9c34d19-fe88-405e-b32b-5ce8097a7f97"]},{"text":"user can view Add New customer page","id":"cb9768eb-6e07-48be-8645-9f0a509d939e","astNodeIds":["a6685f98-5358-4e68-9792-641fed42ce0a"]},{"text":"user can Enter customer info","id":"74386983-6a8c-4bb0-83fa-9b83d681a005","astNodeIds":["38fdd0b1-24b1-41b7-b85f-203214244628"]},{"text":"click on save button","id":"53592a4b-6f53-4889-8f19-bafe2368b2ee","astNodeIds":["38f791bb-f9fc-4f97-9619-caec25df305f"]},{"text":"user can view confirmation message \"The new customer has been added successfully\"","id":"be87edc7-458c-46b7-8822-8db774bd832b","astNodeIds":["7bb2db20-64b0-46a0-8a2e-c5f75e77b36c"]},{"text":"close browser","id":"c78b9560-4969-4146-869d-58fbb1a19ac0","astNodeIds":["918f9fa3-7ecf-4321-81f3-248f83dace8b"]}],"tags":[{"name":"@sanity","astNodeId":"d577ba5c-5076-4416-acf8-0d46cd9e38cc"}],"astNodeIds":["8b9ee85a-e645-4c74-a9b3-f4fafcb7e543"]}},{"pickle":{"id":"82777be9-75c1-4622-93cb-5675fa17fa7e","uri":"file:///C:/Users/ashok%20gollapalli/eclipse-workspace/nopCommerceV_001/./Features/Customers.feature","name":"Search customer by EmailID","language":"en","steps":[{"text":"open chrome Browser","id":"7cab0875-3ae3-42b7-afea-f0b5bca3e3de","astNodeIds":["fbef919c-89d7-40cb-aea9-2de4b3757b31"]},{"text":"navigate to URL \"https://admin-demo.nopcommerce.com/login\"","id":"a2d435a1-6dc3-4535-a4a3-550ba8b40824","astNodeIds":["d25f8fb9-41ce-4f78-9477-4efa3956a59b"]},{"text":"enter username \"admin@yourstore.com\" and password \"admin\"","id":"b61a9bb5-fbb8-4863-860b-187747b0beb1","astNodeIds":["0ed64499-8f12-4426-acb8-20a95c650ace"]},{"text":"Click on Login button","id":"bedb6d3c-5215-4b4b-931d-c05c93813556","astNodeIds":["b6e44911-c6e4-472c-8f34-b07a33fbcc06"]},{"text":"user can view Dashbord","id":"364363b6-ac1f-4d46-91dc-594f47969b18","astNodeIds":["68fe0e8c-5c7e-4956-ae5d-c2bb98f43b75"]},{"text":"click on custemers menu","id":"2aafef97-f7a8-46b0-a263-4a18b51269f5","astNodeIds":["1c207052-4400-4f5f-a14e-467215e349ac"]},{"text":"click on customer menu item","id":"679d9cca-2e66-46d5-8fd4-d32f3c690d26","astNodeIds":["3337d6a0-e30d-41cb-bf36-d1bc647c489d"]},{"text":"Enter customer Email","id":"2069ac91-e5f7-405f-8fe4-88f742b04f26","astNodeIds":["75aa9cd9-4cdb-4528-97c5-750813f3491c"]},{"text":"click on search button","id":"c4bb24e5-6084-4ae5-b57b-8a266b6e7e8d","astNodeIds":["bc63a85c-9eac-4c1a-a5af-ab2508ea6d8b"]},{"text":"user should found Email in the Search table","id":"dfc566ee-032f-4d79-9573-3fed5e71a969","astNodeIds":["6a01a4bd-5ff1-4994-ad63-55a771f78fc5"]},{"text":"close browser","id":"51613261-c778-4ba8-9072-0cf83c968ee7","astNodeIds":["364a1133-cba8-4216-826e-e57b63163fe0"]}],"tags":[{"name":"@regression","astNodeId":"173aa3ce-97cd-4175-aae7-9ee05cc4deec"}],"astNodeIds":["ec824a20-220e-4ef3-9d76-527987392fd5"]}},{"pickle":{"id":"e5f428d3-c0f8-4deb-b011-04ba90f37ed3","uri":"file:///C:/Users/ashok%20gollapalli/eclipse-workspace/nopCommerceV_001/./Features/Customers.feature","name":"Search customer by FileName","language":"en","steps":[{"text":"open chrome Browser","id":"593c9aa1-42ea-438b-91ca-f0c00c39f2d4","astNodeIds":["fbef919c-89d7-40cb-aea9-2de4b3757b31"]},{"text":"navigate to URL \"https://admin-demo.nopcommerce.com/login\"","id":"f36a8567-c58e-4ae0-a21c-fb8682b6b29c","astNodeIds":["d25f8fb9-41ce-4f78-9477-4efa3956a59b"]},{"text":"enter username \"admin@yourstore.com\" and password \"admin\"","id":"6ab6438d-2761-47b8-91c9-6dec4e54d3de","astNodeIds":["0ed64499-8f12-4426-acb8-20a95c650ace"]},{"text":"Click on Login button","id":"4001241e-a38a-460c-817e-a72400efc963","astNodeIds":["b6e44911-c6e4-472c-8f34-b07a33fbcc06"]},{"text":"user can view Dashbord","id":"a5bb96e0-76dd-455c-8a06-8da51b25b283","astNodeIds":["68fe0e8c-5c7e-4956-ae5d-c2bb98f43b75"]},{"text":"click on custemers menu","id":"f89c932e-3d09-4b44-96eb-3726029f024c","astNodeIds":["d075eb5d-0143-4ed4-a14a-4e275b63ba6d"]},{"text":"click on customer menu item","id":"6d992799-828b-424a-8f56-8f0c428d3f55","astNodeIds":["1df452d3-9249-4040-87cd-564cb4c5d76f"]},{"text":"Enter customer FirstName","id":"9082b229-1a1b-4bbc-ad7a-cf77453098a9","astNodeIds":["02d8e369-46aa-4af7-9600-82bf14ffac43"]},{"text":"Enter customer LastName","id":"3633d776-5587-4eaf-a53b-d680dee02a60","astNodeIds":["e7017a98-3b33-487f-bed1-7ceb9cf27ce4"]},{"text":"click on search button","id":"72c7611e-9b17-4d07-82a8-d2c8ee86a290","astNodeIds":["fcb236a0-baf0-48ec-bc84-bcd058d788af"]},{"text":"user found Name in the Search table","id":"ec2ba04b-2cac-4dd8-a66d-312e57844370","astNodeIds":["5eb2e14d-5de6-45a1-bb49-b1b94ed4d391"]},{"text":"close browser","id":"f09f1cf7-057c-49aa-954a-d75dcc1fd2a6","astNodeIds":["6452405e-8171-41a8-9437-824c68c01438"]}],"tags":[{"name":"@regression","astNodeId":"843e1bcb-5bd6-4aec-b50b-341ed9ae28d0"}],"astNodeIds":["5805d1b8-ff9b-4a55-8f41-6f012d23c553"]}},{"testCase":{"id":"91f62543-858d-4df8-b6ba-82cc14392044","pickleId":"10a8a0c0-09a9-4456-a4c2-8eb763bc5729","testSteps":[{"id":"8e682d2c-72a0-47e3-a656-4d07b89c5b6c","hookId":"d37cdaa3-cba8-414e-9326-fa0fde018208"},{"id":"96b3cfdb-ed60-43d0-9490-3701c2171c1e","pickleStepId":"d3d730e7-5030-493c-8097-bf943afd7da2","stepDefinitionIds":["f1169cc9-417a-4da1-b257-c6f243069519"],"stepMatchArgumentsLists":[{}]},{"id":"6714f832-3d0b-45b3-8fc4-9866d386c689","pickleStepId":"3291f07d-ffc2-48b0-bed2-586d896c2b2d","stepDefinitionIds":["7bf6d6e5-5aa5-4ef0-b99b-0596c8fddfc3"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":16,"value":"\"https://admin-demo.nopcommerce.com/login\"","children":[{"start":17,"value":"https://admin-demo.nopcommerce.com/login","children":[{}]},{"children":[{}]}]}}]}]},{"id":"5050f823-bdb4-4044-81de-08a62dfaea65","pickleStepId":"28724a60-084f-4d98-8e84-8ce31b020b38","stepDefinitionIds":["c95371d1-807c-424e-bcc0-34b2d0df55d1"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":15,"value":"\"admin@yourstore.com\"","children":[{"start":16,"value":"admin@yourstore.com","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":50,"value":"\"admin\"","children":[{"start":51,"value":"admin","children":[{}]},{"children":[{}]}]}}]}]},{"id":"a1478741-9afa-44ea-8325-c255a1496f1f","pickleStepId":"84e80403-a14f-4723-8345-ff07d7a234f4","stepDefinitionIds":["a733abe4-f1cc-49d1-b3e4-857a9b580e1e"],"stepMatchArgumentsLists":[{}]},{"id":"a3ded149-6131-4625-8895-c06f30280a57","pickleStepId":"f89aa17a-d4e4-43c9-aceb-bc787e4b7c44","stepDefinitionIds":["8208b0f7-f7b9-46a8-85a8-b0d63a979d37"],"stepMatchArgumentsLists":[{}]},{"id":"48a6542d-6585-4a60-b8db-b470f3441e03","pickleStepId":"6c3a0a1e-ed64-4f25-9e0e-bbe6a75f7b39","stepDefinitionIds":["9a1c37a6-6466-4e8b-822a-660138f52f42"],"stepMatchArgumentsLists":[{}]},{"id":"d733a90e-6916-416b-85ab-bfe60d913d9f","pickleStepId":"2af3c8e7-428b-48df-92ce-21e835186d39","stepDefinitionIds":["42ad1e9e-cd1b-4dda-81c6-e59d432dea91"],"stepMatchArgumentsLists":[{}]},{"id":"c673cd64-54a7-4b59-925a-2833e1b2e426","pickleStepId":"43e49878-dfc9-4faa-9a73-60dc7c579d24","stepDefinitionIds":["7c954100-695f-4251-b1c6-928a9fcc8de9"],"stepMatchArgumentsLists":[{}]},{"id":"47e3406a-b5a2-4c0d-be68-bf02113dd6be","pickleStepId":"cb9768eb-6e07-48be-8645-9f0a509d939e","stepDefinitionIds":["dc99ff9f-0fde-424e-85a7-56795fda19c6"],"stepMatchArgumentsLists":[{}]},{"id":"06644e9b-5bae-4828-9565-78550d415d6b","pickleStepId":"74386983-6a8c-4bb0-83fa-9b83d681a005","stepDefinitionIds":["d35b795d-f7cb-4076-83c7-08387477db90"],"stepMatchArgumentsLists":[{}]},{"id":"54a72232-e5b5-42d9-be9c-2aec0c6e7d02","pickleStepId":"53592a4b-6f53-4889-8f19-bafe2368b2ee","stepDefinitionIds":["91b7dc6e-b52a-4def-907f-2e9a5d050d8c"],"stepMatchArgumentsLists":[{}]},{"id":"d5c68211-2674-4baa-9a49-13023d5098a7","pickleStepId":"be87edc7-458c-46b7-8822-8db774bd832b","stepDefinitionIds":["8daeabf5-8ff2-4ddf-ba88-5c0b52c2eaea"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":35,"value":"\"The new customer has been added successfully\"","children":[{"start":36,"value":"The new customer has been added successfully","children":[{}]},{"children":[{}]}]}}]}]},{"id":"0c52ef4b-09ff-4a74-be2a-fa73b8cf2004","pickleStepId":"c78b9560-4969-4146-869d-58fbb1a19ac0","stepDefinitionIds":["d0b66ea3-0f0a-4753-bc05-4a5af976303b"],"stepMatchArgumentsLists":[{}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1619013155","nanos":842711000},"testCaseId":"91f62543-858d-4df8-b6ba-82cc14392044","id":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepStarted":{"timestamp":{"seconds":"1619013155","nanos":850287000},"testStepId":"8e682d2c-72a0-47e3-a656-4d07b89c5b6c","testCaseStartedId":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"3","nanos":348189000}},"timestamp":{"seconds":"1619013159","nanos":198476000},"testStepId":"8e682d2c-72a0-47e3-a656-4d07b89c5b6c","testCaseStartedId":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepStarted":{"timestamp":{"seconds":"1619013159","nanos":206473600},"testStepId":"96b3cfdb-ed60-43d0-9490-3701c2171c1e","testCaseStartedId":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":32958100}},"timestamp":{"seconds":"1619013159","nanos":239431700},"testStepId":"96b3cfdb-ed60-43d0-9490-3701c2171c1e","testCaseStartedId":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepStarted":{"timestamp":{"seconds":"1619013159","nanos":240430900},"testStepId":"6714f832-3d0b-45b3-8fc4-9866d386c689","testCaseStartedId":"484da54c-2245-4452-97ef-2f202165adf5"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"3","nanos":345876700}},"timestamp"
